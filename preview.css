@@ -1,0 +1,116 @@
+/* Light theme by default */
+:root {
+    --preview-bg: #fff;
+    --preview-text: #000;
+    --preview-border: #ccc;
+}
+
+/* Override for dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --preview-bg: #222;
+        --preview-text: #eee;
+        --preview-border: #555;
+    }
+}
+
+.es-preview {
+    background-color: var(--preview-bg);
+    color: var(--preview-text);
+    border: 1px solid var(--preview-border);
+    padding: 10px;
+    justify-content: center;
+    border-radius: 6px;
+    font-family: sans-serif;
+    max-width: 320px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+#post-hover-preview {
+    position: absolute;
+    z-index: 10010;
+    max-width: 420px;
+    background: rgba(255, 255, 255, 0.98);
+    border: 1.5px solid #c1c1c1;
+    box-shadow: 0 8px 32px 0 rgba(60, 70, 90, 0.13);
+    padding: 16px 16px 12px 16px;
+    border-radius: 10px;
+    font-family: "Segoe UI", "Arial", sans-serif;
+    font-size: 15px;
+    color: #232325;
+    pointer-events: none;
+    transition: opacity 0.15s;
+    opacity: 1;
+}
+
+#post-hover-preview .es-preview-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+#post-hover-preview .es-preview-images {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0 10px 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#post-hover-preview .es-preview-noimg {
+    color: #888;
+    padding: 12px 0;
+    font-style: italic;
+    text-align: center;
+}
+
+#post-hover-preview .es-preview-loading,
+#post-hover-preview .es-preview-failed {
+    color: #737373;
+    text-align: center;
+    padding: 8px 0;
+}
+
+
+#post-hover-preview {
+    pointer-events: auto;
+}
+
+#post-hover-preview {
+    overflow-y: auto;
+    max-height: 380px;
+}
+
+.two-large-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.es-preview-thumb-large {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+    /* ⬅️ Horizontally center if not using flex */
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
