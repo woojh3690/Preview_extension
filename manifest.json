@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "name": "ES Forum Post Preview",
     "description": "Show post previews on hover for discuss.eroscripts.com",
@@ -30,4 +31,38 @@
     "icons": {
         "128": "icon128.png"
     }
+=======
+{
+    "name": "ES Forum Post Preview",
+    "description": "Show post previews on hover for discuss.eroscripts.com",
+    "version": "1.0.0",
+    "permissions": [
+        "storage"
+    ],
+    "manifest_version": 3,
+    "action": {
+        "default_title": "Toggle Preview",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://discuss.eroscripts.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "preview.css"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "icons": {
+        "128": "icon128.png"
+    }
+>>>>>>> 00457b1babde9906d997b001847d58b146ec23ff
 }
