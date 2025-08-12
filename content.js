@@ -12,6 +12,8 @@ function debounce(fn, delay) {
 // Create the preview container, once
 let previewDiv = document.createElement('div');
 previewDiv.id = 'post-hover-preview';
+previewDiv.style.border = '0px';
+previewDiv.style.padding = '0px';
 previewDiv.style.display = 'none';
 document.body.appendChild(previewDiv);
 
@@ -193,7 +195,7 @@ function composePreviewHTML(post) {
     }
 
     return `
-    <div class="es-preview-images two-large-column">
+    <div class="es-preview-images two-large-column" style="border: 0px; padding: 0px; margin: 0px;">
       ${post.images.map(
         url => `<img class="es-preview-thumb-large" src="${url}" alt="Preview image">`
     ).join('')}
